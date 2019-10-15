@@ -1,29 +1,28 @@
-package data;
+package dto;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity
-@Table(name = "Items")
-public class Item {
+/**
+ *
+ * Entity implementation class for Entity: Item
+ *
+ */
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class ItemDTO {
+
     private long id;
     private String name;
     private String countryOrigin;
     private String photograph;
     private String category;
-    @Temporal(TemporalType.DATE)
     private double price;
     private Date publhishedDate;
 
-    private List<Item> selledItems;
+    private List<ItemDTO> selledItems;
 
-    public Item() {}
 
-    public Item(String name, String countryOrigin, String photograph, String category, double price, Date publhishedDate) {
+    public ItemDTO(String name, String countryOrigin, String photograph, String category, double price, Date publhishedDate) {
         this.name = name;
         this.countryOrigin = countryOrigin;
         this.photograph = photograph;

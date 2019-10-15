@@ -1,14 +1,17 @@
-package data;
+package dto;
 
-import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
-@Entity
-@Table(name = "Users")
-public class User {
+/**
+ *
+ * Entity implementation class for Entity: User
+ *
+ */
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+public class UserDTO implements Serializable {
+
     private long id;
     private String finalName;
     private String lstName;
@@ -16,11 +19,9 @@ public class User {
     private String email;
     private String password;
 
-    private List<Item> boughtItems;
+    private List<ItemDTO> boughtItems;
 
-    public User() {}
-
-    public User(long id, String finalName, String lstName, String country, String email, String password) {
+    public UserDTO(long id, String finalName, String lstName, String country, String email, String password) {
         this.id = id;
         this.finalName = finalName;
         this.lstName = lstName;
